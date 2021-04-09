@@ -754,3 +754,30 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
+
+
+
+function exp_label_Checkpoints_4_eval_expression(context) {
+    // NAME_EN + ' / ' + NAME_AR
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.properties['NAME_EN']  + ' / ') + feature.properties['NAME_AR'] );
+    } else {
+        return ((feature['NAME_EN']  + ' / ') + feature['NAME_AR'] );
+    }
+}
+
+
+function exp_label_UprootedCommunities_5_eval_expression(context) {
+    // NAME_EN + ' / ' + NAME_AR
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.properties['NAME_EN']  + ' / ') + feature.properties['NAME_AR'] );
+    } else {
+        return ((feature['NAME_EN']  + ' / ') + feature['NAME_AR'] );
+    }
+}

@@ -11,9 +11,11 @@
         <link rel="stylesheet" href="css/MarkerCluster.css">
         <link rel="stylesheet" href="css/MarkerCluster.Default.css">
         <style>
-        #map {
-            width: 1456px;
-            height: 820px;
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
         }
         </style>
         <title></title>
@@ -31,11 +33,11 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
-        <script src="data/MandateeraCommunities_1.js"></script>
+        <script src="data/BritishColonialRuleCommunities_1.js"></script>
         <script src="data/NationalParks_2.js"></script>
-        <script src="data/SeparationandAnnexationWall_3.js"></script>
+        <script src="data/TheAnnexationandExpansionWall_3.js"></script>
         <script src="data/Checkpoints_4.js"></script>
-        <script src="data/DepopulatedVillages_5.js"></script>
+        <script src="data/UprootedCommunities_5.js"></script>
         <script src="data/CafesandRestaurants_6.js"></script>
         <script src="data/Landmarks_7.js"></script>
         <script src="data/Organisations_8.js"></script>
@@ -43,9 +45,9 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:19, minZoom:8
-        }).fitBounds([[31.607907073790816,34.83274095622214],[31.96035180440496,35.56973618405283]]);
+        }).setView([31.7828,35.2253],13);
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('Baselayer: © <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors;</br>Webmap made with <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        map.attributionControl.setPrefix('<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 </a></br>Made with <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a></br>Baselayer: © <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
@@ -63,23 +65,21 @@
         });
         layer_Background_0;
         map.addLayer(layer_Background_0);
-        function pop_MandateeraCommunities_1(feature, layer) {
+        function pop_BritishColonialRuleCommunities_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['name_e'] !== null ? autolinker.link(feature.properties['name_e'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['name_e'] !== null ? autolinker.link(feature.properties['name_e'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">اسم</th>\
-                        <td>' + (feature.properties['name_a'] !== null ? autolinker.link(feature.properties['name_a'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['name_a'] !== null ? autolinker.link(feature.properties['name_a'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MandateeraCommunities_1_0() {
+        function style_BritishColonialRuleCommunities_1_0() {
             return {
-                pane: 'pane_MandateeraCommunities_1',
+                pane: 'pane_BritishColonialRuleCommunities_1',
                 opacity: 1,
                 color: 'rgba(85,87,89,1.0)',
                 dashArray: '',
@@ -92,33 +92,34 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_MandateeraCommunities_1');
-        map.getPane('pane_MandateeraCommunities_1').style.zIndex = 401;
-        map.getPane('pane_MandateeraCommunities_1').style['mix-blend-mode'] = 'normal';
-        var layer_MandateeraCommunities_1 = new L.geoJson(json_MandateeraCommunities_1, {
+        map.createPane('pane_BritishColonialRuleCommunities_1');
+        map.getPane('pane_BritishColonialRuleCommunities_1').style.zIndex = 401;
+        map.getPane('pane_BritishColonialRuleCommunities_1').style['mix-blend-mode'] = 'normal';
+        var layer_BritishColonialRuleCommunities_1 = new L.geoJson(json_BritishColonialRuleCommunities_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_MandateeraCommunities_1',
-            layerName: 'layer_MandateeraCommunities_1',
-            pane: 'pane_MandateeraCommunities_1',
-            onEachFeature: pop_MandateeraCommunities_1,
-            style: style_MandateeraCommunities_1_0,
+            dataVar: 'json_BritishColonialRuleCommunities_1',
+            layerName: 'layer_BritishColonialRuleCommunities_1',
+            pane: 'pane_BritishColonialRuleCommunities_1',
+            onEachFeature: pop_BritishColonialRuleCommunities_1,
+            style: style_BritishColonialRuleCommunities_1_0,
         });
-        bounds_group.addLayer(layer_MandateeraCommunities_1);
-        map.addLayer(layer_MandateeraCommunities_1);
+        bounds_group.addLayer(layer_BritishColonialRuleCommunities_1);
         function pop_NationalParks_2(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['built_over'] !== null ? autolinker.link(feature.properties['built_over'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['area_dunam'] !== null ? autolinker.link(feature.properties['area_dunam'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['name_en'] !== null ? autolinker.link(feature.properties['name_en'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['name_ar'] !== null ? autolinker.link(feature.properties['name_ar'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Built over</th>\
+                        <td>' + (feature.properties['built_over'] !== null ? autolinker.link(feature.properties['built_over'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Dunams | دونمي</th>\
+                        <td>' + (feature.properties['area_dunam'] !== null ? autolinker.link(feature.properties['area_dunam'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -153,51 +154,73 @@
         });
         bounds_group.addLayer(layer_NationalParks_2);
         map.addLayer(layer_NationalParks_2);
-        function pop_SeparationandAnnexationWall_3(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">Separation and Annexation Wall</td>\
-                    </tr>\
-                    </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+        function pop_TheAnnexationandExpansionWall_3(feature, layer) {
         }
 
-        function style_SeparationandAnnexationWall_3_0() {
-            return {
-                pane: 'pane_SeparationandAnnexationWall_3',
+        function style_TheAnnexationandExpansionWall_3_0(feature) {
+            switch(String(feature.properties['q2wHide_status'])) {
+                case 'Constructed':
+                    return {
+                pane: 'pane_TheAnnexationandExpansionWall_3',
                 opacity: 1,
                 color: 'rgba(158,50,34,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 2.0,
+                weight: 1.0,
                 fillOpacity: 0,
                 interactive: true,
             }
+                    break;
+                case 'Projected':
+                    return {
+                pane: 'pane_TheAnnexationandExpansionWall_3',
+                opacity: 1,
+                color: 'rgba(158,50,34,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Under Construction':
+                    return {
+                pane: 'pane_TheAnnexationandExpansionWall_3',
+                opacity: 1,
+                color: 'rgba(158,50,34,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
         }
-        map.createPane('pane_SeparationandAnnexationWall_3');
-        map.getPane('pane_SeparationandAnnexationWall_3').style.zIndex = 403;
-        map.getPane('pane_SeparationandAnnexationWall_3').style['mix-blend-mode'] = 'normal';
-        var layer_SeparationandAnnexationWall_3 = new L.geoJson(json_SeparationandAnnexationWall_3, {
+        map.createPane('pane_TheAnnexationandExpansionWall_3');
+        map.getPane('pane_TheAnnexationandExpansionWall_3').style.zIndex = 403;
+        map.getPane('pane_TheAnnexationandExpansionWall_3').style['mix-blend-mode'] = 'normal';
+        var layer_TheAnnexationandExpansionWall_3 = new L.geoJson(json_TheAnnexationandExpansionWall_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_SeparationandAnnexationWall_3',
-            layerName: 'layer_SeparationandAnnexationWall_3',
-            pane: 'pane_SeparationandAnnexationWall_3',
-            onEachFeature: pop_SeparationandAnnexationWall_3,
-            style: style_SeparationandAnnexationWall_3_0,
+            dataVar: 'json_TheAnnexationandExpansionWall_3',
+            layerName: 'layer_TheAnnexationandExpansionWall_3',
+            pane: 'pane_TheAnnexationandExpansionWall_3',
+            onEachFeature: pop_TheAnnexationandExpansionWall_3,
+            style: style_TheAnnexationandExpansionWall_3_0,
         });
-        bounds_group.addLayer(layer_SeparationandAnnexationWall_3);
-        map.addLayer(layer_SeparationandAnnexationWall_3);
+        bounds_group.addLayer(layer_TheAnnexationandExpansionWall_3);
+        map.addLayer(layer_TheAnnexationandExpansionWall_3);
         function pop_Checkpoints_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">اسم</th>\
-                        <td>' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -233,16 +256,26 @@
             },
         });
         bounds_group.addLayer(layer_Checkpoints_4);
+            
+        
+        
+            
         map.addLayer(layer_Checkpoints_4);
-        function pop_DepopulatedVillages_5(feature, layer) {
+        map.on('zoomend', function(ev){
+            if (map.getZoom() > 12) {
+                map.addLayer(layer_Checkpoints_4);
+            } else { // when zoom <= 12
+                map.removeLayer(layer_Checkpoints_4);
+            }
+        });
+            
+        function pop_UprootedCommunities_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">اسم</th>\
-                        <td>' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</th>\
                     </tr>\
                     <tr>\
                         <th scope="row">History</th>\
@@ -263,50 +296,47 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_DepopulatedVillages_5_0() {
+        function style_UprootedCommunities_5_0() {
             return {
-                pane: 'pane_DepopulatedVillages_5',
+                pane: 'pane_UprootedCommunities_5',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(85,87,89,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1,
+                weight: 0.5,
                 fill: true,
-                fillOpacity: 0.6,
+                fillOpacity: 0.7,
                 fillColor: 'rgba(121,154,61,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_DepopulatedVillages_5');
-        map.getPane('pane_DepopulatedVillages_5').style.zIndex = 405;
-        map.getPane('pane_DepopulatedVillages_5').style['mix-blend-mode'] = 'normal';
-        var layer_DepopulatedVillages_5 = new L.geoJson(json_DepopulatedVillages_5, {
+        map.createPane('pane_UprootedCommunities_5');
+        map.getPane('pane_UprootedCommunities_5').style.zIndex = 405;
+        map.getPane('pane_UprootedCommunities_5').style['mix-blend-mode'] = 'normal';
+        var layer_UprootedCommunities_5 = new L.geoJson(json_UprootedCommunities_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DepopulatedVillages_5',
-            layerName: 'layer_DepopulatedVillages_5',
-            pane: 'pane_DepopulatedVillages_5',
-            onEachFeature: pop_DepopulatedVillages_5,
+            dataVar: 'json_UprootedCommunities_5',
+            layerName: 'layer_UprootedCommunities_5',
+            pane: 'pane_UprootedCommunities_5',
+            onEachFeature: pop_UprootedCommunities_5,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_DepopulatedVillages_5_0(feature));
+                return L.circleMarker(latlng, style_UprootedCommunities_5_0(feature));
             },
         });
-        bounds_group.addLayer(layer_DepopulatedVillages_5);
-        map.addLayer(layer_DepopulatedVillages_5);
+        bounds_group.addLayer(layer_UprootedCommunities_5);
+        map.addLayer(layer_UprootedCommunities_5);
         function pop_CafesandRestaurants_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Name</th>\
                         <td>' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
-                        <th scope="row">اسم</th>\
                         <td>' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -352,12 +382,10 @@
         function pop_Landmarks_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">اسم</th>\
-                        <td>' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -402,12 +430,10 @@
         function pop_Organisations_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">اسم</th>\
-                        <td>' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>اسم</strong><br />' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Phone</th>\
@@ -468,12 +494,10 @@
         function pop_Hotels_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">اسم</th>\
-                        <td>' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Info</strong><br />' + (feature.properties['POPUP_TEXT_EN'] !== null ? autolinker.link(feature.properties['POPUP_TEXT_EN'].toLocaleString()) : '') + '</td>\
@@ -519,8 +543,44 @@
         bounds_group.addLayer(layer_Hotels_9);
         cluster_Hotels_9.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Hotels_9.png" /> Hotels': cluster_Hotels_9,'<img src="legend/Organisations_8.png" /> Organisations': cluster_Organisations_8,'<img src="legend/Landmarks_7.png" /> Landmarks': cluster_Landmarks_7,'<img src="legend/CafesandRestaurants_6.png" /> Cafes and Restaurants': cluster_CafesandRestaurants_6,'<img src="legend/DepopulatedVillages_5.png" /> Depopulated Villages': layer_DepopulatedVillages_5,'<img src="legend/Checkpoints_4.png" /> Checkpoints': layer_Checkpoints_4,'<img src="legend/SeparationandAnnexationWall_3.png" /> Separation and Annexation Wall': layer_SeparationandAnnexationWall_3,'<img src="legend/NationalParks_2.png" /> National Parks': layer_NationalParks_2,'<img src="legend/MandateeraCommunities_1.png" /> Mandate-era Communities': layer_MandateeraCommunities_1,"Background": layer_Background_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Hotels_9.png" width="15" height="15" /> Hotels': cluster_Hotels_9,'<img src="legend/Organisations_8.png" width="15" height="15"/> Organisations': cluster_Organisations_8,'<img src="legend/Landmarks_7.png" width="15" height="15"/> Landmarks': cluster_Landmarks_7,'<img src="legend/CafesandRestaurants_6.png" width="15" height="15"/> Cafes and Restaurants': cluster_CafesandRestaurants_6,'<img src="legend/UprootedCommunities_5.png" width="15" height="15"/> Uprooted Communities': layer_UprootedCommunities_5,'<img src="legend/Checkpoints_4.png" width="15" height="15" /> Checkpoints': layer_Checkpoints_4,'The Annexation and Expansion Wall<br /><table><tr><td style="text-align: center; padding-left:10px;"><img src="legend/TheAnnexationandExpansionWall_3_Constructed0.png" /></td><td>Constructed or Under Construction</td></tr><tr><td style="text-align: center; padding-left:10px;"><img src="legend/TheAnnexationandExpansionWall_3_Projected1.png" /></td><td>Projected</td></tr></table>': layer_TheAnnexationandExpansionWall_3,'<img src="legend/NationalParks_2.png" /> National Parks': layer_NationalParks_2,'<img src="legend/BritishColonialRuleCommunities_1.png" /> British Colonial Rule Communities': layer_BritishColonialRuleCommunities_1,"Background": layer_Background_0,},{collapsed:false}).addTo(map);
         setBounds();
+        var i = 0;
+        layer_Checkpoints_4.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((exp_label_Checkpoints_4_eval_expression(context) !== null?String('<div style="color: #7d8b8f; font-size: 12pt; font-family: \'Adobe Arabic\', sans-serif;">' + exp_label_Checkpoints_4_eval_expression(context)) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Checkpoints_4'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_UprootedCommunities_5.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((exp_label_UprootedCommunities_5_eval_expression(context) !== null?String('<div style="color: #555759; font-size: 14pt; font-family: \'Adobe Arabic\', sans-serif;">' + exp_label_UprootedCommunities_5_eval_expression(context)) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_UprootedCommunities_5'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5]);
+        map.on("zoomend", function(){
+            resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5]);
+        });
         </script>
     </body>
 </html>
