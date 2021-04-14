@@ -763,9 +763,9 @@ function exp_label_Checkpoints_4_eval_expression(context) {
     var feature = context.feature;
     
     if (feature.properties) {
-        return ((feature.properties['NAME_EN']  + ' / ') + feature.properties['NAME_AR'] );
+        return ((feature.properties['NAME_EN']  + ' / ') + '<div class="textArab">' +  feature.properties['NAME_AR'] + '</div>');
     } else {
-        return ((feature['NAME_EN']  + ' / ') + feature['NAME_AR'] );
+        return ((feature['NAME_EN']  + ' / ') + '<div class="textArab">' + feature['NAME_AR'] + '</div>');
     }
 }
 
@@ -776,8 +776,8 @@ function exp_label_UprootedCommunities_5_eval_expression(context) {
     var feature = context.feature;
     
     if (feature.properties) {
-        return ((feature.properties['NAME_EN']  + ' / ') + feature.properties['NAME_AR'] );
+        return ((feature.properties['NAME_EN']  + ' / ') + '<div class="textArab">' +feature.properties['NAME_AR'] + '</div>');
     } else {
-        return ((feature['NAME_EN']  + ' / ') + feature['NAME_AR'] );
+        return ((feature['NAME_EN']  + ' / ') + '<div class="textArab">' + feature['NAME_AR'] + '</div>');
     }
 }

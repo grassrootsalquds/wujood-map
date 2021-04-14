@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/MarkerCluster.css">
         <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="css/customGJ.css">
         <style>
         html, body, #map {
             width: 100%;
@@ -71,7 +74,7 @@
                         <td colspan="2">' + (feature.properties['name_e'] !== null ? autolinker.link(feature.properties['name_e'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['name_a'] !== null ? autolinker.link(feature.properties['name_a'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2" class="textArab">' + (feature.properties['name_a'] !== null ? autolinker.link(feature.properties['name_a'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -111,7 +114,7 @@
                         <td colspan="2">' + (feature.properties['name_en'] !== null ? autolinker.link(feature.properties['name_en'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['name_ar'] !== null ? autolinker.link(feature.properties['name_ar'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2" class="textArab">' + (feature.properties['name_ar'] !== null ? autolinker.link(feature.properties['name_ar'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Built over</th>\
@@ -163,11 +166,11 @@
                     return {
                 pane: 'pane_TheAnnexationandExpansionWall_3',
                 opacity: 1,
-                color: 'rgba(158,50,34,1.0)',
+                color: 'rgba(85,87,89,1.0)',
                 dashArray: '',
                 lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
+                lineJoin: 'round',
+                weight: 1.2,
                 fillOpacity: 0,
                 interactive: true,
             }
@@ -176,11 +179,11 @@
                     return {
                 pane: 'pane_TheAnnexationandExpansionWall_3',
                 opacity: 1,
-                color: 'rgba(158,50,34,1.0)',
+                color: 'rgba(85,87,89,1.0)',
                 dashArray: '1,5',
                 lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
+                lineJoin: 'round',
+                weight: 1.2,
                 fillOpacity: 0,
                 interactive: true,
             }
@@ -189,11 +192,11 @@
                     return {
                 pane: 'pane_TheAnnexationandExpansionWall_3',
                 opacity: 1,
-                color: 'rgba(158,50,34,1.0)',
+                color: 'rgba(85,87,89,1.0)',
                 dashArray: '',
                 lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
+                lineJoin: 'round',
+                weight: 1.2,
                 fillOpacity: 0,
                 interactive: true,
             }
@@ -220,7 +223,7 @@
                         <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2" class="textArab">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -233,7 +236,7 @@
                 stroke: false,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(158,50,34,1.0)',
+                fillColor: 'rgba(85,87,89,1.0)',
                 interactive: true,
             }
         }
@@ -275,7 +278,7 @@
                         <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</th>\
+                        <td colspan="2" class="textArab">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</th>\
                     </tr>\
                     <tr>\
                         <th scope="row">History</th>\
@@ -308,7 +311,7 @@
                 weight: 0.5,
                 fill: true,
                 fillOpacity: 0.7,
-                fillColor: 'rgba(121,154,61,1.0)',
+                fillColor: 'rgba(158,51,34,1.0)',
                 interactive: true,
             }
         }
@@ -337,7 +340,7 @@
                     <tr>\
                         <td>' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     <tr>\
-                        <td>' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                        <td class="textArab">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -385,7 +388,7 @@
                         <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2" class="textArab">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -433,7 +436,7 @@
                         <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>اسم</strong><br />' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2" class="textArab"><strong>اسم</strong><br />' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Phone</th>\
@@ -497,7 +500,7 @@
                         <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2" class="textArab">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Info</strong><br />' + (feature.properties['POPUP_TEXT_EN'] !== null ? autolinker.link(feature.properties['POPUP_TEXT_EN'].toLocaleString()) : '') + '</td>\
@@ -551,7 +554,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((exp_label_Checkpoints_4_eval_expression(context) !== null?String('<div style="color: #7d8b8f; font-size: 12pt; font-family: \'Adobe Arabic\', sans-serif;">' + exp_label_Checkpoints_4_eval_expression(context)) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Checkpoints_4'});
+            layer.bindTooltip((exp_label_Checkpoints_4_eval_expression(context) !== null?String('<div class="checkpointLabel">' + exp_label_Checkpoints_4_eval_expression(context)) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Checkpoints_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -564,7 +567,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((exp_label_UprootedCommunities_5_eval_expression(context) !== null?String('<div style="color: #555759; font-size: 14pt; font-family: \'Adobe Arabic\', sans-serif;">' + exp_label_UprootedCommunities_5_eval_expression(context)) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_UprootedCommunities_5'});
+            layer.bindTooltip((exp_label_UprootedCommunities_5_eval_expression(context) !== null?String('<div class="uprootedComLabel">' + exp_label_UprootedCommunities_5_eval_expression(context)) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_UprootedCommunities_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
