@@ -1,4 +1,11 @@
 
+#map a {
+color: #9e3222;   
+}
+
+.leaflet-control-attribution a {
+color: #9e3222 !important;   
+}
 
 .leaflet-container {
 	font-family: 'Fira Sans', Arial, sans-serif;
