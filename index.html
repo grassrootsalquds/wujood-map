@@ -546,7 +546,18 @@
         bounds_group.addLayer(layer_Hotels_9);
         cluster_Hotels_9.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Hotels_9.png" width="15" height="15" /> Hotels': cluster_Hotels_9,'<img src="legend/Organisations_8.png" width="15" height="15"/> Organisations': cluster_Organisations_8,'<img src="legend/Landmarks_7.png" width="15" height="15"/> Landmarks': cluster_Landmarks_7,'<img src="legend/CafesandRestaurants_6.png" width="15" height="15"/> Cafes and Restaurants': cluster_CafesandRestaurants_6,'<img src="legend/UprootedCommunities_5.png" width="15" height="15"/> Uprooted Communities': layer_UprootedCommunities_5,'<img src="legend/Checkpoints_4.png" width="15" height="15" /> Checkpoints': layer_Checkpoints_4,'The Annexation and Expansion Wall<br /><table><tr><td style="text-align: center; padding-left:10px;"><img src="legend/TheAnnexationandExpansionWall_3_Constructed0.png" /></td><td>Constructed or Under Construction</td></tr><tr><td style="text-align: center; padding-left:10px;"><img src="legend/TheAnnexationandExpansionWall_3_Projected1.png" /></td><td>Projected</td></tr></table>': layer_TheAnnexationandExpansionWall_3,'<img src="legend/NationalParks_2.png" /> National Parks': layer_NationalParks_2,'<img src="legend/BritishColonialRuleCommunities_1.png" /> British Colonial Rule Communities': layer_BritishColonialRuleCommunities_1,"Background": layer_Background_0,},{collapsed:true}).addTo(map);
+            
+        
+        L.control.layers(baseMaps,{
+            '<img src="legend/Hotels_9.png" width="15" height="15" /> Hotels | فنادق': cluster_Hotels_9,
+            '<img src="legend/Organisations_8.png" width="15" height="15"/> Organisations | مؤسسات': cluster_Organisations_8,
+            '<img src="legend/Landmarks_7.png" width="15" height="15"/> Landmarks | معالم': cluster_Landmarks_7,
+            '<img src="legend/CafesandRestaurants_6.png" width="15" height="15"/> Cafes and Restaurants | مقاهي ومطاعم': cluster_CafesandRestaurants_6,
+            '<img src="legend/UprootedCommunities_5.png" width="15" height="15"/> Uprooted Communities | قرى وأحياء مهجرة': layer_UprootedCommunities_5,
+            '<img src="legend/Checkpoints_4.png" width="15" height="15" /> Checkpoints |  حواجز عسكرية': layer_Checkpoints_4,
+            'The Annexation and Expansion Wall | جدار الضم والتوسع <br /><table><tr><td style="text-align: center; padding-left:10px;"><img src="legend/TheAnnexationandExpansionWall_3_Constructed0.png" /></td>        <td>Constructed or Under Construction | قائم ... قيد الإنشاء</td></tr><tr><td style="text-align: center; padding-left:10px;"><img src="legend/TheAnnexationandExpansionWall_3_Projected1.png" />           </td><td>Projected | مخطط</td></tr></table>': layer_TheAnnexationandExpansionWall_3,'<img src="legend/NationalParks_2.png" /> National Parks |  حدائق قومية ': layer_NationalParks_2,
+            '<img src="legend/BritishColonialRuleCommunities_1.png" /> British Colonial Rule Communities | التقسيمات الإدارية البريطانية': layer_BritishColonialRuleCommunities_1,
+            "Background | الخلفية": layer_Background_0,},{collapsed:true}).addTo(map);
         setBounds();
         var i = 0;
         layer_Checkpoints_4.eachLayer(function(layer) {
