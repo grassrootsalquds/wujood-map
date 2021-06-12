@@ -36,6 +36,9 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
+        
+        
+   
         <script src="data/BritishColonialRuleCommunities_1.js"></script>
         <script src="data/NationalParks_2.js"></script>
         <script src="data/TheAnnexationandExpansionWall_3.js"></script>
@@ -45,16 +48,24 @@
         <script src="data/Landmarks_7.js"></script>
         <script src="data/Organisations_8.js"></script>
         <script src="data/Hotels_9.js"></script>
-        <script>
+        <script src="data/Occupiedcommunities1967_10.js"></script>
+        
+        
+    <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:19, minZoom:8
-        }).setView([31.7828,35.2253],13);
+        }).fitBounds([[31.721040300304637,35.054303456052274],[31.87790606785217,35.35093431542728]]);
         var hash = new L.Hash(map);
+        
+
         map.attributionControl.setPrefix('<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 </a></br>Made with <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a></br>Baselayer: © <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
+        
+
         map.createPane('pane_Background_0');
         map.getPane('pane_Background_0').style.zIndex = 400;
         var layer_Background_0 = L.tileLayer('https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
@@ -64,11 +75,15 @@
             minZoom: 8,
             maxZoom: 19,
             minNativeZoom: 0,
+            minNativeZoom: 0,
             maxNativeZoom: 18
         });
         layer_Background_0;
         map.addLayer(layer_Background_0);
-        function pop_BritishColonialRuleCommunities_1(feature, layer) {
+        
+        
+
+                function pop_BritishColonialRuleCommunities_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['name_e'] !== null ? autolinker.link(feature.properties['name_e'].toLocaleString()) : '') + '</td>\
@@ -127,6 +142,8 @@
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
+        
+
 
         function style_NationalParks_2_0() {
             return {
@@ -157,6 +174,9 @@
         });
         bounds_group.addLayer(layer_NationalParks_2);
         map.addLayer(layer_NationalParks_2);
+        
+        
+
         function pop_TheAnnexationandExpansionWall_3(feature, layer) {
         }
 
@@ -229,6 +249,7 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
+
         function style_Checkpoints_4_0() {
             return {
                 pane: 'pane_Checkpoints_4',
@@ -259,11 +280,11 @@
             },
         });
         bounds_group.addLayer(layer_Checkpoints_4);
-            
-        
         
             
         map.addLayer(layer_Checkpoints_4);
+        
+        
         map.on('zoomend', function(ev){
             if (map.getZoom() > 12) {
                 map.addLayer(layer_Checkpoints_4);
@@ -271,6 +292,7 @@
                 map.removeLayer(layer_Checkpoints_4);
             }
         });
+        
             
         function pop_UprootedCommunities_5(feature, layer) {
             var popupContent = '<table>\
@@ -311,7 +333,7 @@
                 weight: 0.5,
                 fill: true,
                 fillOpacity: 0.7,
-                fillColor: 'rgba(158,51,34,1.0)',
+                fillColor: 'rgba(196,94,83,1.0)',
                 interactive: true,
             }
         }
@@ -335,6 +357,9 @@
         });
         bounds_group.addLayer(layer_UprootedCommunities_5);
         map.addLayer(layer_UprootedCommunities_5);
+        
+        
+        
         function pop_CafesandRestaurants_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -382,6 +407,9 @@
 
         bounds_group.addLayer(layer_CafesandRestaurants_6);
         cluster_CafesandRestaurants_6.addTo(map);
+        
+
+        
         function pop_Landmarks_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -430,6 +458,9 @@
 
         bounds_group.addLayer(layer_Landmarks_7);
         cluster_Landmarks_7.addTo(map);
+        
+        
+        
         function pop_Organisations_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -494,6 +525,9 @@
 
         bounds_group.addLayer(layer_Organisations_8);
         cluster_Organisations_8.addTo(map);
+        
+        
+        
         function pop_Hotels_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -545,19 +579,72 @@
 
         bounds_group.addLayer(layer_Hotels_9);
         cluster_Hotels_9.addTo(map);
+        
+
+        function pop_Occupiedcommunities1967_10(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NAME_EN'] !== null ? autolinker.link(feature.properties['NAME_EN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2" class="textArab">' + (feature.properties['NAME_AR'] !== null ? autolinker.link(feature.properties['NAME_AR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Occupiedcommunities1967_10_0() {
+            return {
+                pane: 'pane_Occupiedcommunities1967_10',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(85,87,89,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 0.7,
+                fillColor: 'rgba(158,50,34,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Occupiedcommunities1967_10');
+        map.getPane('pane_Occupiedcommunities1967_10').style.zIndex = 401;
+        map.getPane('pane_Occupiedcommunities1967_10').style['mix-blend-mode'] = 'normal';
+        var layer_Occupiedcommunities1967_10 = new L.geoJson(json_Occupiedcommunities1967_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Occupiedcommunities1967_10',
+            layerName: 'layer_Occupiedcommunities1967_10',
+            pane: 'pane_Occupiedcommunities1967_10',
+            onEachFeature: pop_Occupiedcommunities1967_10,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Occupiedcommunities1967_10_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Occupiedcommunities1967_10);
+        map.addLayer(layer_Occupiedcommunities1967_10);
+        
+        
         var baseMaps = {};
             
         
         L.control.layers(baseMaps,{
-            '<img src="legend/Hotels_9.png" width="15" height="15" /> Hotels | فنادق': cluster_Hotels_9,
-            '<img src="legend/Organisations_8.png" width="15" height="15"/> Organisations | مؤسسات': cluster_Organisations_8,
-            '<img src="legend/Landmarks_7.png" width="15" height="15"/> Landmarks | معالم': cluster_Landmarks_7,
-            '<img src="legend/CafesandRestaurants_6.png" width="15" height="15"/> Cafes and Restaurants | مقاهي ومطاعم': cluster_CafesandRestaurants_6,
-            '<img src="legend/UprootedCommunities_5.png" width="15" height="15"/> Uprooted Communities | قرى وأحياء مهجرة': layer_UprootedCommunities_5,
-            '<img src="legend/Checkpoints_4.png" width="15" height="15" /> Checkpoints |  حواجز عسكرية': layer_Checkpoints_4,
-            'The Annexation and Expansion Wall | جدار الضم والتوسع <br /><table><tr><td style="text-align: center; padding-left:10px;"><img src="legend/TheAnnexationandExpansionWall_3_Constructed0.png" /></td>        <td>Constructed or Under Construction | قائم ... قيد الإنشاء</td></tr><tr><td style="text-align: center; padding-left:10px;"><img src="legend/TheAnnexationandExpansionWall_3_Projected1.png" />           </td><td>Projected | مخطط</td></tr></table>': layer_TheAnnexationandExpansionWall_3,'<img src="legend/NationalParks_2.png" /> National Parks |  حدائق قومية ': layer_NationalParks_2,
-            '<img src="legend/BritishColonialRuleCommunities_1.png" /> British Colonial Rule Communities | التقسيمات الإدارية البريطانية': layer_BritishColonialRuleCommunities_1,
-            "Background | الخلفية": layer_Background_0,},{collapsed:true}).addTo(map);
+            '<img src="legend/Hotels_9.png" width="15" height="15" /> Hotels | <span class="textArab"> فنادق </span>': cluster_Hotels_9,
+            '<img src="legend/Organisations_8.png" width="15" height="15"/> Organisations | <span class="textArab"> مؤسسات</span>': cluster_Organisations_8,
+            '<img src="legend/Landmarks_7.png" width="15" height="15"/> Landmarks | <span class="textArab"> معالم</span>': cluster_Landmarks_7,
+            '<img src="legend/CafesandRestaurants_6.png" width="15" height="15"/> Cafes and Restaurants | <span class="textArab"> مقاهي ومطاعم</span>': cluster_CafesandRestaurants_6,
+            '<img src="legend/UprootedCommunities_5.png" width="15" height="15"/> Uprooted Communities 1948 | <span class="textArab"> 1948 قرى وأحياء مهجرة</span>': layer_UprootedCommunities_5,
+            '<img src="legend/occupiedCommunities_10.png" width="15" height="15"/> Occupied Communities 1967 | <span class="textArab"> قرى وأحياء محتلة عام 1967</span>': layer_Occupiedcommunities1967_10,
+            '<img src="legend/Checkpoints_4.png" width="15" height="15" /> Checkpoints | <span class="textArab"> حواجز عسكرية</span>': layer_Checkpoints_4,
+            'The Annexation and Expansion Wall | <span class="textArab"> جدار الضم والتوسع </span><br /><table><tr><td style="text-align: center; padding-left:10px;"><img src="legend/TheAnnexationandExpansionWall_3_Constructed0.png" /></td>        <td>Constructed or Under Construction | <span class="textArab"> قائم ... قيد الإنشاء</span></td></tr><tr><td style="text-align: center; padding-left:10px;"><img src="legend/TheAnnexationandExpansionWall_3_Projected1.png" />           </td><td>Projected | <span class="textArab"> مخطط</span></td></tr></table>': layer_TheAnnexationandExpansionWall_3,'<img src="legend/NationalParks_2.png" /> National Parks | <span class="textArab"> حدائق قومية ': layer_NationalParks_2,
+            '<img src="legend/BritishColonialRuleCommunities_1.png" /> British Colonial Rule Communities | <span class="textArab"> التقسيمات الإدارية البريطانية</span>': layer_BritishColonialRuleCommunities_1,
+            'Background | <span class="textArab"> الخلفية </span>': layer_Background_0,},{collapsed:true}).addTo(map);
         setBounds();
         var i = 0;
         layer_Checkpoints_4.eachLayer(function(layer) {
@@ -585,15 +672,30 @@
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5]);
+        
+                var i = 0;
+        layer_Occupiedcommunities1967_10.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((exp_label_Occupiedcommunities1967_10_eval_expression(context) !== null?String('<div class="occupiedComLabel">' + exp_label_Occupiedcommunities1967_10_eval_expression(context)) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Occupiedcommunities1967_10'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        
+        resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5,layer_Occupiedcommunities1967_10]);
         map.on("zoomend", function(){
-            resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5]);
+            resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5,layer_Occupiedcommunities1967_10]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5]);
+            resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5,layer_Occupiedcommunities1967_10]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5]);
+            resetLabels([layer_BritishColonialRuleCommunities_1,layer_Checkpoints_4,layer_UprootedCommunities_5,layer_Occupiedcommunities1967_10]);
         });
         </script>
     </body>

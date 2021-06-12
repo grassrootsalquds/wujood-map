@@ -21,6 +21,11 @@ color: #9e3222 !important;
     font-size: 11pt !important;
 }
 
+.occupiedComLabel {
+    color: #555759;
+    font-size: 11pt !important;
+}
+
 .textArab {
  font-family: 'Changa', sans-serif;
 }

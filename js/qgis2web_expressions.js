@@ -781,3 +781,15 @@ function exp_label_UprootedCommunities_5_eval_expression(context) {
         return ((feature['NAME_EN']  + ' / ') + '<div class="textArab">' + feature['NAME_AR'] + '</div>');
     }
 }
+
+function exp_label_Occupiedcommunities1967_10_eval_expression(context) {
+    // NAME_EN + ' / ' + NAME_AR
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.properties['NAME_EN']  + ' / ') + '<div class="textArab">' +feature.properties['NAME_AR'] + '</div>');
+    } else {
+        return ((feature['NAME_EN']  + ' / ') + '<div class="textArab">' +feature['NAME_AR'] + '</div>');
+    }
+}
