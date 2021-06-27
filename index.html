@@ -37,7 +37,6 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
         
-        
    
         <script src="data/BritishColonialRuleCommunities_1.js"></script>
         <script src="data/NationalParks_2.js"></script>
@@ -49,6 +48,7 @@
         <script src="data/Organisations_8.js"></script>
         <script src="data/Hotels_9.js"></script>
         <script src="data/Occupiedcommunities1967_10.js"></script>
+        
         
         
     <script>
@@ -176,7 +176,6 @@
         map.addLayer(layer_NationalParks_2);
         
         
-
         function pop_TheAnnexationandExpansionWall_3(feature, layer) {
         }
 
@@ -253,11 +252,12 @@
         function style_Checkpoints_4_0() {
             return {
                 pane: 'pane_Checkpoints_4',
-                radius: 4.0,
-                stroke: false,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(85,87,89,1.0)',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/square-checkpoint.svg',
+            iconSize: [12, 12]
+        }),
                 interactive: true,
             }
         }
@@ -276,7 +276,7 @@
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Checkpoints_4_0(feature));
+                return L.marker(latlng, style_Checkpoints_4_0(feature));
             },
         });
         bounds_group.addLayer(layer_Checkpoints_4);
